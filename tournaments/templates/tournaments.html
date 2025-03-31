@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tournaments</title>
+</head>
+<body>
+    <h1>Active Tournaments</h1>
+    <ul>
+        {% for tournament in tournaments %}
+            <li>{{ tournament.name }} (Start: {{ tournament.start_date }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
