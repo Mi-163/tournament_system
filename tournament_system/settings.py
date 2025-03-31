@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tournament_system',
     'tournaments',
+<<<<<<< HEAD
+=======
+    
+>>>>>>> c5e1db7 (Saving local changes before pulling)
 ]
 
 MIDDLEWARE = [
@@ -77,14 +81,15 @@ WSGI_APPLICATION = 'tournament_system.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',  # MariaDB uses the MySQL backend
-        'NAME': 'tournament_db',               # Name of the database you created
-        'USER': 'root',                        # Your MariaDB username
-        'PASSWORD': 'dbms',           # Your MariaDB root password
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'tournament_db',  # Your database name
+        'USER': 'root',           # MySQL username
+        'PASSWORD': 'root@123',  # Your MySQL password
+        'HOST': 'localhost',      # Host is typically localhost
+        'PORT': '3306',           # Default MySQL port
     }
 }
+
 
 
 
