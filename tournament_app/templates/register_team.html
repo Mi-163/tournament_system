@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Team | TourneyMVP</title>
+    <style>
+        :root {
+            --primary: #5b6abf;
+            --secondary: #4a569a;
+            --light: #f8f9fa;
+            --dark: #333;
+            --text-muted: #666;
+            --border-radius: 8px;
+            --spots-color: #4a7dff;
+            --spots-bg: #e6f0ff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.5;
+            color: var(--dark);
+            background-color: #f5f7ff;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 25px 20px;
+            flex: 1;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e1e4e8;
+        }
+        
+        .page-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .tournament-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        h1, h2, h3 {
+            margin: 0;
+        }
+        
+        h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid #e1e4e8;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #d64242;
+            color: white;
+            padding: 10px 18px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .back-btn:hover {
+            background: #c13333;
+            transform: translateY(-1px);
+        }
+        
+        .form-container {
+            margin-top: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            background-color: white;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(91, 106, 191, 0.15);
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-1px);
+        }
+        
+        .spots-remaining {
+            color: var(--spots-color);
+            font-weight: 500;
+            background-color: var(--spots-bg);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid rgba(74, 125, 255, 0.3);
+        }
+        
+        .messages {
+            margin: 15px 0;
+        }
+        
+        .message {
+            padding: 12px 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .message.error {
+            background-color: #ffeeee;
+            color: #d64242;
+        }
+        
+        .message.success {
+            background-color: #edf7ed;
+            color: #2e7d32;
+        }
+        
+        footer {
+            text-align: center;
+            color: var(--secondary);
+            font-size: 0.85rem;
+            padding: 15px;
+            margin-top: auto;
+        }
+        
+        .footer-logo {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            .back-btn {
+                padding: 8px 12px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-container">
+        <div class="page-header">
+            <div class="tournament-icon">🏆</div>
+            <h1>Tourney<span style="color: var(--secondary);">MVP</span></h1>
+        </div>
+        <a href="{% url 'dashboard' %}" class="back-btn">
+            ← Back to Dashboard
+        </a>
+    </div>
+
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="card">
+        <h2>Join {{ tournament.name }}</h2>
+        <span class="spots-remaining">{{ spots_remaining }} spot{{ spots_remaining|pluralize }} left</span>
+        
+        <div class="form-container">
+            <form method="POST">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="id_name">Team Name</label>
+                    {{ form.name }}
+                    {% if form.name.errors %}
+                        <div style="color: #d64242; font-size: 0.85rem; margin-top: 5px;">
+                            {{ form.name.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_players">Player Names</label>
+                    {{ form.players }}
+                    {% if form.players.errors %}
+                        <div style="color: #d64242; font-size: 0.85rem; margin-top: 5px;">
+                            {{ form.players.errors }}
+                        </div>
+                    {% endif %}
+                    <small style="display: block; margin-top: 5px; color: var(--secondary);">
+                        Separate names with commas: Alex, Jamie, Taylor
+                    </small>
+                </div>
+                
+                <button type="submit" class="btn">Sign Up Team</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><span class="footer-logo">TourneyMVP</span> &copy; 2025</p>
+</footer>
+
+</body>
+</html>

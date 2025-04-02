@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to TourneyMVP</title>
+    <style>
+        :root {
+            --primary: #5b6abf;
+            --secondary: #4a569a;
+            --light: #f8f9fa;
+            --dark: #333;
+            --text-muted: #666;
+            --border-radius: 8px;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f5f7ff;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2.3rem;
+            font-weight: 650;
+        }
+        
+        .brand-name {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        
+        p {
+            color: var(--dark);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            text-decoration: none;
+            transition: transform 0.2s ease, background 0.2s ease;
+            font-size: 1rem;
+            min-width: 140px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: #f0f4ff;
+        }
+        
+        .tournament-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 35px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        .feature {
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .feature-icon {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+        
+        .feature-desc {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        
+        footer {
+            text-align: center;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            width: 100%;
+            padding: 15px;
+        }
+        
+        .footer-logo {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tournament-icon">🏆</div>
+        <h1>Welcome to <span class="brand-name">TourneyMVP</span></h1>
+        
+        <p>Join tournaments, track your matches, and climb the brackets with our easy-to-use platform.</p>
+
+        <div class="button-group">
+            <a href="{% url 'login' %}" class="btn btn-primary">
+                Sign In
+            </a>
+            <a href="{% url 'register' %}" class="btn btn-outline">
+                Create Account
+            </a>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📝</div>
+                <div class="feature-title">Easy Registration</div>
+                <div class="feature-desc">Get started in minutes</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👁️</div>
+                <div class="feature-title">Live Updates</div>
+                <div class="feature-desc">Never miss a match</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Bracket Tracking</div>
+                <div class="feature-desc">See your progress</div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p><span class="footer-logo">TourneyMVP</span> &copy; 2025</p>
+    </footer>
+</body>
+</html>
